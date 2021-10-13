@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "swapi.base_url",
+      "type": "java.lang.String",
+      "description": "Star Wars Base API URL"
+    }
+  ]
+}
