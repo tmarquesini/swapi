@@ -1,6 +1,5 @@
 package com.example.swapi.services;
 
-import com.example.swapi.component.SwapiHttp;
 import com.example.swapi.dto.PlanetResults;
 import com.example.swapi.dto.PlanetDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,11 +13,11 @@ import java.util.List;
 @Service
 public class PlanetsService {
 
-    private final SwapiHttp swapi;
+    private final SwapiHttpService swapi;
     private final ObjectMapper objectMapper;
 
     @Autowired
-    public PlanetsService(SwapiHttp swapi, ObjectMapper objectMapper) {
+    public PlanetsService(SwapiHttpService swapi, ObjectMapper objectMapper) {
         this.swapi = swapi;
         this.objectMapper = objectMapper;
     }

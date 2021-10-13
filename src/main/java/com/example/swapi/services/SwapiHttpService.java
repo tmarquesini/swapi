@@ -1,14 +1,14 @@
-package com.example.swapi.component;
+package com.example.swapi.services;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-@Component
-public class SwapiHttp {
+@Service
+public class SwapiHttpService {
 
     private final RestTemplate restTemplate;
 
-    public SwapiHttp() {
+    public SwapiHttpService() {
         this.restTemplate = new RestTemplate();
     }
 
