@@ -1,31 +1,33 @@
 package com.example.swapi.controllers;
 
-import com.example.swapi.repositories.FilmsRepository;
-import com.google.gson.JsonObject;
+import com.example.swapi.dto.FilmDTO;
+import com.example.swapi.services.FilmsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("films")
+@RequestMapping("filmes")
 public class FilmsController {
 
-    private final FilmsRepository filmsService;
+    private final FilmsService filmsService;
 
     @Autowired
-    public FilmsController(FilmsRepository filmsService) {
+    public FilmsController(FilmsService filmsService) {
         this.filmsService = filmsService;
     }
 
     @GetMapping("")
-    public JsonObject getAllFilms() {
+    public List<FilmDTO> getAllFilms() {
         return filmsService.getAllFilms();
     }
 
     @GetMapping("{id}")
-    public JsonObject getFilmById(@PathVariable("id") String id) {
+    public FilmDTO getFilmById(@PathVariable("id") String id) {
         return filmsService.getFilmById(id);
     }
 

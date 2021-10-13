@@ -1,31 +1,33 @@
 package com.example.swapi.controllers;
 
-import com.example.swapi.repositories.PeopleRepository;
-import com.google.gson.JsonObject;
+import com.example.swapi.dto.PeopleDTO;
+import com.example.swapi.services.PeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("people")
+@RequestMapping("populacao")
 public class PeopleController {
 
-    private final PeopleRepository peopleService;
+    private final PeopleService peopleService;
 
     @Autowired
-    public PeopleController(PeopleRepository peopleService) {
+    public PeopleController(PeopleService peopleService) {
         this.peopleService = peopleService;
     }
 
     @GetMapping("")
-    public JsonObject getAllFilms() {
+    public List<PeopleDTO> getAllFilms() {
         return peopleService.getAllPeople();
     }
 
     @GetMapping("{id}")
-    public JsonObject getFilmById(@PathVariable("id") String id) {
+    public PeopleDTO getFilmById(@PathVariable("id") String id) {
         return peopleService.getPeopleById(id);
     }
 
