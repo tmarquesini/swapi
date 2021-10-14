@@ -3,6 +3,7 @@ package com.example.swapi.services;
 import com.example.swapi.dto.FilmsResults;
 import com.example.swapi.dto.FilmDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,16 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class FilmsService {
 
     private final SwapiHttpService swapi;
     private final ObjectMapper objectMapper;
-
-    @Autowired
-    public FilmsService(SwapiHttpService swapi, ObjectMapper objectMapper) {
-        this.swapi = swapi;
-        this.objectMapper = objectMapper;
-    }
 
     @SneakyThrows
     public List<FilmDTO> getAllFilms() {

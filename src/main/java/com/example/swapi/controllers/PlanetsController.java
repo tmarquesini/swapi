@@ -2,6 +2,7 @@ package com.example.swapi.controllers;
 
 import com.example.swapi.dto.PlanetDTO;
 import com.example.swapi.services.PlanetsService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,14 +13,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("planetas")
+@AllArgsConstructor
 public class PlanetsController {
 
     private final PlanetsService planetsService;
-
-    @Autowired
-    public PlanetsController(PlanetsService peopleService) {
-        this.planetsService = peopleService;
-    }
 
     @GetMapping("")
     public List<PlanetDTO> getAllFilms() {
