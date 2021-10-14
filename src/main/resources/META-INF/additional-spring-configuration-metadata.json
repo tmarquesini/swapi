@@ -4,6 +4,11 @@
       "name": "swapi.base_url",
       "type": "java.lang.String",
       "description": "Star Wars Base API URL"
+    },
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "description": "JWT secret"
     }
   ]
 }
