@@ -7,5 +7,3 @@ create table users (
         token varchar(255),
         primary key (id)
 );
-
-insert into users (username, password) values ('user', 'secret');
