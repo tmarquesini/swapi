@@ -41,7 +41,6 @@ Headers: `
 "Authorization": "Bearer tokendousuarioautenticado"`
 
 Payload: `{
-"username": "user",
 "password": "secret"
 }`
 
