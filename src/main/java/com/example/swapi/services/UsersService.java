@@ -22,10 +22,6 @@ public class UsersService {
         return usersRepository.findByUsername(username);
     }
 
-    public User findByToken(String token) {
-        return usersRepository.findByToken(token);
-    }
-
     public User saveUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
